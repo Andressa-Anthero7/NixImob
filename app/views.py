@@ -9,8 +9,8 @@ def index(request):
         formulario = PropostaForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return render(request, 'app/index.html')
+            return render(request, 'nix-imob/index.html')
     formulario = PropostaForm()
     img = Imagens.objects.all()
     dados = Perfil.objects.all()
-    return render(request, 'app/index.html',{'formulario': formulario,'img':img,'dados': dados})
+    return render(request, 'nix-imob/index.html',{'formulario': formulario,'img':img,'dados': dados})

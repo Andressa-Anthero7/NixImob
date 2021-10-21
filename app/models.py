@@ -36,6 +36,7 @@ class Perfil(models.Model):
         ('RONDÔNIA', 'RO'),
         ('RORAIMA','RR'),
         ('SANTA CATARINA', 'SC'),
+        ('SÃO PAULO', 'SP'),
         ('SERGIPE', 'SE'),
         ('TOCANTINS', 'TO'),
     )
@@ -48,8 +49,11 @@ class Perfil(models.Model):
 	cidade = models.CharField(max_length=30)
 	estado =models.CharField(max_length=22,choices=ESTADOS)
 	bairro = models.CharField(max_length=30)
+	perfil_facebook = models.CharField(max_length=100)
+	perfil_instagram = models.CharField(max_length=100)
 	creci = models.CharField(max_length=6)
 	estado_creci = models.CharField(max_length=22,choices=ESTADOS)
+
 	
 class Imagens(models.Model):
 	imagem_perfil = ResizedImageField(size=[660, 540], quality=100, upload_to='media/',force_format='PNG', null=False,blank=False)
